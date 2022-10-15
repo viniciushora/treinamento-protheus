@@ -10,8 +10,18 @@ Mexendo com BD
 	u_zBanco()
 /*/
 
-User Function zBanco()
-	Local aArea	:= GetArea()
+User Function zBank()
+	RpcSetEnv(;
+        /* cRpcEmp  */ "99",; // Código de grupo de empresas
+        /* cRpcFil  */ "01",; // Código da empresa/filial/unidade de negócio
+        /* cEnvUser */ ,;
+        /* cEnvPass */ ,;
+        /* cEnvMod  */ "COM",; // Módulo: Compras (Sem o SIGA)
+        /* cFunName */ "Teste",; // Nome da função
+        /* aTables  */ {"SB1"} ;
+	)
+	
+	Local aArea	:= GetArea() // pega a WorkArea
 	Local aAreaB1	:= SB1->(GetArea())
 	Local cMens := ""
 	
@@ -38,7 +48,7 @@ User Function zBanco()
 	EndDo
 	
 	//Mostrando a mensagem
-	Aviso('Atenção', cMens, {'OK'}, 03)
+	Alert('Atenção', cMens, {'OK'}, 03)
 	
 	RestArea(aAreaB1)
 	RestArea(aArea)

@@ -11,5 +11,17 @@ Mexendo com BD
 /*/
 
 User Function zBanco2()
-	
+	RpcSetEnv(;
+		/* cRpcEmp  */ "99",; // Código de grupo de empresas
+		/* cRpcFil  */ "01",; // Código da empresa/filial/unidade de negócio
+		/* cEnvUser */ ,;
+		/* cEnvPass */ ,;
+		/* cEnvMod  */ "COM",; // Módulo: Compras (Sem o SIGA)
+		/* cFunName */ "Teste",; // Nome da função
+		/* aTables  */ {"SB1"} ;
+	)
+	DbSelectArea("SB1")
+	SB1->(DbGoTop())
+	Alert("Codigo ... "+fieldget(fieldpos("B1_COD")))
+	Alert("Hello warudo")
 Return
