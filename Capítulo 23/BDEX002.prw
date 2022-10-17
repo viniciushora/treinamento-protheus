@@ -22,6 +22,6 @@ User Function zBanco2()
 	)
 	DbSelectArea("SB1")
 	SB1->(DbGoTop())
-	Alert("Codigo ... "+fieldget(fieldpos("B1_COD")))
-	Alert("Hello warudo")
+	//Alert("Hello World")
+	MessageBox("Codigo ... "+fieldget(fieldpos("B1_COD")), "Teste", 0)
 Return
