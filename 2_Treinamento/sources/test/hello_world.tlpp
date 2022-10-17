@@ -1,0 +1,100 @@
+#include "TOTVS.ch"
+
+#define CRLF chr(13)+chr(10)
+#define CRLF2 CRLF + CRLF
+
+/*/ {Protheus.doc} HelloWorld
+Sou um dev protheus xD
+@type function
+@version  12.1.33
+@author Vinicius Corte
+@since 08/10/2022
+@return variant, return_description
+/*/
+User Function fHelloWorld()
+
+    Local cNome := "" as character
+    Local nIdade := 0 as numeric
+    Private cEndereco := "" as character
+
+    cNome = "Vinicius da Hora Corte"
+    nIdade = 22
+    cEndereco = "Rua dos Papagaios, Costa Bela, Serra, ES"
+
+    fSetNome(@cNome)
+    fSetIdade(@nIdade)
+    fSetEndereco()
+
+    RpcSetEnv(;
+        /* cRpcEmp  */ "99",; // Código de grupo de empresas
+        /* cRpcFil  */ "01",; // Código da empresa/filial/unidade de negócio
+        /* cEnvUser */ ,;
+        /* cEnvPass */ ,;
+        /* cEnvMod  */ "COM",; // Módulo: Compras (Sem o SIGA)
+        /* cFunName */ "Teste",; // Nome da função
+        /* aTables  */ {"SB1"} ;
+    )
+
+    fImprime()
+
+    // USER FUNCTION NUM PODE REPETIR, NEM EM ARQUIVOS DIFERENTES
+
+    // não deixe lixo no rpo
+
+    // pasta deprecated para arquivos obsoletos
+
+    if lImprimiu
+        ConOut("IMPRIMIU")
+    else
+        ConOut("NAO IMPRIMIU")
+    endif
+
+    RpcClearEnv()
+
+Return
+
+Static Function fImprime(cNome as character, nIdade as numeric, cEndereço as character)
+
+    Local lImprime := .F. as logical
+
+    Default cNome := ""
+    Default nIdade := 18
+    Default cEndereco := ""
+
+    Public lImprimiu := .F. as logical
+
+    if !Empty(cNome) .And. !Empty(nIdade) .And. !Empty(cEndereço)
+
+        FwAlertInfo("Nome: " + cNome + CRLF +;
+            "Idade: " + CValToChar(nIdade) + CRLF+;
+            "Endereço: " + cEndereco;
+        )
+        lImprimiu := .T.
+
+    endif
+
+    // if MsgYesNo('Deseja imprimir hello world?', 'Atenção')
+    //     FwAlertSuccess('Hello Warudo!')
+    // endif
+
+Return lRet
+
+Static Function fSetNome(cName as character)
+
+    cName = "Jalim Rabei Fuun' do"
+
+Return
+
+Static Function fSetIdade(nIdade as numeric)
+
+    nIdade = 69
+
+Return
+
+Static Function fSetEndereco(cEndereco as character)
+
+    cEndereco = "Bairro de Fátima"
+
+Return
+
+

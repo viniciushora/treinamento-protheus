@@ -1,0 +1,21 @@
+#include "TOTVS.ch"
+
+#define CRLF chr(13)+chr(10)
+#define CRLF2 CRLF+CRLF
+
+Static cCep := "29.164-008"
+
+namespace Gworks.Training.Advpl
+
+/*/{Protheus.doc} HelloWorld
+Meu primeiro programa em Advpl/Tlpp!
+@type function
+@version 12.1.33
+@author Giovani Soares
+@since 08/10/2022
+/*/
+User Function HelloWorld() // Gworks.Training.Advpl.U_HelloWorld
+
+    FwAlertSuccess("Sucesso!","MyFirstApp")
+
+Return
