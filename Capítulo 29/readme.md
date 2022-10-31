@@ -86,3 +86,41 @@ Sintaxe simplificada: MBrowse(nLin1, nCol1, nLin2, nCol2, cAlias)
   - 4 – Alterar
   - 5 – Excluir
   - 6 – Livre
+
+- Se no array aRotina o nome da função não for especificado com “()”, o  Mbrowse passará como parâmetros:
+  - cAlias: Alias ativo definido para a Mbrowse;
+  - nRecno: Record number (recno) do registro posicionado no alias ativo;
+  - nOpc: Posição da opção utilizada na Mbrowse de acordo com a ordem da função no array a Rotina.
+
+## AxFunctions()
+- Existem funções que permitem a visualização, inclusão, alteração e exclusão de dados em formato simples;
+  
+### AXALTERA()
+| Sintaxe   | AxAltera(cAlias, nReg, nOpc, aAcho, cFunc, aCpos, cTudoOk, lF3,; cTransact, aButtons, aParam, aAuto, lVirtual, lMaximized) |
+|-----------|----------------------------------------------------------------------------------------------------------------------------|
+| Descrição | Altera um registro                                                                                                         |
+
+### AXDELETA()
+| Sintaxe   | AXDELETA(cAlias, nReg, nOpc, cTransact, aCpos, aButtons, aParam,; aAuto, lMaximized) |
+|-----------|--------------------------------------------------------------------------------------|
+| Descrição | Remove um registro                                                                   |
+
+### AXINCLUI()
+| Sintaxe   | AxInclui(cAlias, nReg, nOpc, aAcho, cFunc, aCpos, cTudoOk, lF3,; cTransact, aButtons, aParam, |
+|-----------|-----------------------------------------------------------------------------------------------|
+| Descrição | Inclui um novo registro                                                                       |
+
+### AXPESQUI()
+| Sintaxe   | AXPESQUI()                                           |
+|-----------|------------------------------------------------------|
+| Descrição | Pesquisa e posiciona o browse no registro pesquisado |
+
+### AXVISUAL()
+| Sintaxe   | AXVISUAL(cAlias, nReg, nOpc, aAcho, nColMens, cMensagem, cFunc, aButtons, lMaximized ) |
+|-----------|----------------------------------------------------------------------------------------|
+| Descrição | Função de visualização padrão das informações do registro                              |
+
+# Exercicios
+- Exercício 1: EXER1.prw
+- Exercício 2:
+- Exercício 3:
